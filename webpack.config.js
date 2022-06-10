@@ -2,6 +2,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: "development",
+    
+    devServer: {
+        static: './dist',
+    },
+
     module: {
         rules: [
             {
@@ -10,15 +15,23 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
-            }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
         ]
     },
 
     plugins: [
         new HtmlWebpackPlugin({
-          template: './src/index.html',
+            template: './src/index.html',
         }),
-      ],
+    ],
 
-    devtool: 'source-map'
+    devtool: 'source-map',
+
+    optimization: {
+        runtimeChunk: 'single',
+    },
 }
