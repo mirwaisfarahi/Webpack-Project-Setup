@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet) 
 
-# Awesome Books Application with ES6
+# Project Setup With Webpack
 
 > In this exercise I have built a simple yet powerful webpack boilerplate, which can be used as a starting point in projects.
 
